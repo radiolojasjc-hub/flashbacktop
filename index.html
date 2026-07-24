@@ -160,7 +160,7 @@
     <div id="splash">
         <div class="splash-loading">
             <i class="fas fa-circle-notch fa-spin"></i>
-            <p>Carregando SERTANEJO...</p>
+            <p>Carregando fleshback...</p>
         </div>
     </div>
 
@@ -491,11 +491,11 @@
                     
                     musicas = data.filter(m => m.src && m.src.trim() && m.title && m.title.trim());
                     musicas.forEach(m => { 
-                        m.id = m.id || `sertanejo_${Math.random().toString(36).substr(2, 6)}`; 
+                        m.id = m.id || `fleshback_${Math.random().toString(36).substr(2, 6)}`; 
                         m.genero = GENERO; 
                     });
                     
-                    console.log(`✅ SERTANEJO carregou ${musicas.length} músicas`);
+                    console.log(`✅ fleshback carregou ${musicas.length} músicas`);
                     showLoading(false);
                     return true;
                 } catch (error) {
