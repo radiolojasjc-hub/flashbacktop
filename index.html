@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PLAY 12 • FleshBack</title>
+    <title>PLAY 12 • FlashBack</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
         body { background: #0a0a0a; overflow: hidden; height: 100vh; }
-        :root { --cor: #ff8800; }
+        :root { --cor: #ffaa00; }
         
         .bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.3; }
         .app { position: relative; z-index: 10; width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; background: transparent; }
@@ -154,21 +154,21 @@
 </head>
 <body>
     <video id="bgVideo" class="bg" autoplay loop muted playsinline>
-        <source src="sertanejo.mp4" type="video/mp4">
+        <source src="flashback.mp4" type="video/mp4">
     </video>
 
     <div id="splash">
         <div class="splash-loading">
             <i class="fas fa-circle-notch fa-spin"></i>
-            <p>Carregando fleshback...</p>
+            <p>Carregando FlashBack...</p>
         </div>
     </div>
 
-    <div id="tap-to-start">▶ ATIVAR RÁDIO SERTANEJO</div>
+    <div id="tap-to-start">▶ ATIVAR RÁDIO FLASHBACK</div>
 
     <div class="app" id="appContainer" style="display: none;">
         <div class="top-bar" id="topBar">
-            <div class="genre-badge" id="genreBadge">🤠 SERTANEJO</div>
+            <div class="genre-badge" id="genreBadge">🕰️ FLASHBACK</div>
             <div class="top-buttons">
                 <span class="audio-status" id="audioStatus"><span class="dot"></span> Aguardando</span>
                 <div class="search-wrapper">
@@ -183,7 +183,7 @@
         </div>
 
         <div class="info-scroll" id="infoScroll">
-            <p id="scrollText">🎵 RÁDIO PLAY 12 - FleshBack 🎵</p>
+            <p id="scrollText">🎵 RÁDIO PLAY 12 - FLASHBACK 🎵</p>
         </div>
 
         <div class="now-playing" id="nowPlaying">
@@ -248,12 +248,12 @@
             'use strict';
 
             // ============================================================
-            // CONFIGURAÇÕES - FleshBack
+            // CONFIGURAÇÕES - FLASHBACK
             // ============================================================
-            const GENERO = 'FleshBack';
-            const COR = '#ff8800';
-            const JSON_URL = 'fleshback.json';
-            const BASE_URL = 'https://raw.githubusercontent.com/radiolojasjc-hub/flashbacktop/refs/heads/main/fleshback.json ';
+            const GENERO = 'FLASHBACK';
+            const COR = '#ffaa00';
+            const JSON_URL = 'flashback.json';
+            const BASE_URL = 'https://raw.githubusercontent.com/radiolojasjc-hub/flashbacktop/refs/heads/main/';
 
             let musicas = [];
             let currentPlaylist = [];
@@ -413,7 +413,7 @@
                 const idx = favorites.indexOf(id);
                 if (idx > -1) { favorites.splice(idx, 1); showNotification('❤️ Removido', 1000); }
                 else { favorites.push(id); showNotification('❤️ Adicionado!', 1000); }
-                localStorage.setItem('radio_favorites_sertanejo', JSON.stringify(favorites));
+                localStorage.setItem('radio_favorites_flashback', JSON.stringify(favorites));
                 updateHeartIcon(id);
                 renderFavList();
             }
@@ -474,7 +474,7 @@
             async function carregarPlaylist() {
                 try {
                     showLoading(true);
-                    console.log('🔄 Carregando sertanejo.json...');
+                    console.log('🔄 Carregando flashback.json...');
                     const response = await fetch(JSON_URL);
                     if (!response.ok) throw new Error(`Erro HTTP ${response.status}`);
                     let data = await response.json();
@@ -491,11 +491,11 @@
                     
                     musicas = data.filter(m => m.src && m.src.trim() && m.title && m.title.trim());
                     musicas.forEach(m => { 
-                        m.id = m.id || `fleshback_${Math.random().toString(36).substr(2, 6)}`; 
+                        m.id = m.id || `flashback_${Math.random().toString(36).substr(2, 6)}`; 
                         m.genero = GENERO; 
                     });
                     
-                    console.log(`✅ fleshback carregou ${musicas.length} músicas`);
+                    console.log(`✅ FlashBack carregou ${musicas.length} músicas`);
                     showLoading(false);
                     return true;
                 } catch (error) {
@@ -799,7 +799,7 @@
 
             async function iniciar() {
                 try {
-                    try { const saved = localStorage.getItem('radio_favorites_sertanejo'); if (saved) favorites = JSON.parse(saved); } catch(e) { favorites = []; }
+                    try { const saved = localStorage.getItem('radio_favorites_flashback'); if (saved) favorites = JSON.parse(saved); } catch(e) { favorites = []; }
                     updateFavCount();
                     renderFavList();
 
@@ -814,7 +814,7 @@
                     currentIndex = 0;
                     const primeira = currentPlaylist[0];
                     if (primeira) { updateNowPlaying(primeira); adicionarAoHistorico(primeira); }
-                    genreBadge.innerHTML = '🤠 SERTANEJO';
+                    genreBadge.innerHTML = '🕰️ FLASHBACK';
 
                     setTimeout(() => {
                         splash.classList.add('hidden');
@@ -858,8 +858,8 @@
             document.getElementById('fabShare').addEventListener('click', () => {
                 const t = currentPlaylist[currentIndex % currentPlaylist.length] || currentPlaylist[0];
                 if (!t) { showNotification('Nenhuma música tocando', 1000); return; }
-                const msg = `🎵 Estou ouvindo "${t.title}" - ${t.artist} no PLAY 12 SERTANEJO! 🤠`;
-                if (navigator.share) { navigator.share({ title: 'PLAY 12 SERTANEJO', text: msg, url: location.href }).catch(() => {}); }
+                const msg = `🎵 Estou ouvindo "${t.title}" - ${t.artist} no PLAY 12 FLASHBACK! 🕰️`;
+                if (navigator.share) { navigator.share({ title: 'PLAY 12 FLASHBACK', text: msg, url: location.href }).catch(() => {}); }
                 else { navigator.clipboard.writeText(msg + ' ' + location.href).then(() => { showNotification('📋 Copiado!', 2000); }).catch(() => { showNotification('Compartilhamento não disponível', 1000); }); }
                 fabMain.click();
             });
@@ -886,7 +886,7 @@
                 if (buscaTimeout) clearTimeout(buscaTimeout);
                 buscaTimeout = setTimeout(() => {
                     if (termo === '') { 
-                        genreBadge.innerHTML = '🤠 SERTANEJO'; 
+                        genreBadge.innerHTML = '🕰️ FLASHBACK'; 
                         if (isBackgroundActive) { 
                             currentPlaylist = shuffleArray([...musicas]); 
                             currentIndex = 0; 
