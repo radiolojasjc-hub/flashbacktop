@@ -8,5 +8,17 @@
 {"id":7,"artist":"Michael-Jackson","title":"Billie-Jean-Afro-House-Remix","genero":"MPB","src":"Michael-Jackson-_Billie-Jean-Afro-House-Remix.mp3"},
 {"id":8,"artist":"Roupa-nova","title":"Whisky-A-Go-Go","genero":"MPB","src":"Whisky A Go Go.mp3"},
 {"id":9,"artist":"TheTrammps","title":"Original-Long","genero":"MPB","src":"TheTrammps-_Original-Long.mp3"},
-{"id":10,"artist":"TINA-CHARLES","title":"Embalos-dos-Anos-70","genero":"MPB","src":"TINA-CHARLES-_Embalos-dos-Anos-70.mp3"}
+{"id":10,"artist":"TINA-CHARLES","title":"Embalos-dos-Anos-70","genero":"MPB","src":"TINA-CHARLES-_Embalos-dos-Anos-70.mp3"},
+  {"id":11,"artist":"ABBA","title":"Dancing Queen","genero":"POP","src":"ABBA-DancingQueen.mp3"},
+{"id":12,"artist":"Chubby-Checker","title":"Let s Twist Again","genero":"POP","src":"Chubby-Checker-LetsTwistAgain.opus"},
+{"id":13,"artist":"Elvis-Presley","title":"Kiss Me Quick Legendas","genero":"POP","src":"Elvis-Presley-KissMeQuickLegendas.mp3"},
+{"id":14,"artist":"Jive Bunny","title":"Swing The Mood","genero":"POP","src":"JiveBunny-SwingTheMood.opus"},
+{"id":15,"artist":"Ray-Parker","title":"Ghostbusters Extended Remastered by Gilles Nuytens","genero":"POP","src":"Ray-Parker-GhostbustersExtendedRemasteredbyGillesNuytens.mp3"},
+{"id":16,"artist":"ROCK-TH- BOAT","title":"HEAVEN MUST BE MISSING","genero":"POP","src":"ROCK-TH-BOAT-HEAVENMUSTBEMISSING.mp3"},
+{"id":17,"artist":"Sugar","title":"Sugar","genero":"POP","src":"Sugar-Sugar.mp3"},
+{"id":18,"artist":"Gloria Gaynor","title":"I will Survive Can t take my eyes off you","genero":"POP","src":"GloriaGaynor-IwillSurviveCanttakemyeyesoffyou.mp3"},
+{"id":19,"artist":"Celebration","title":"Kool The Gang","genero":"POP","src":"Celebration-KoolTheGang.mp3"},
+{"id":20,"artist":"SIDNEY-MAGAL","title":"MEU SANGUE FERVE POR VC","genero":"POP","src":"SIDNEY-MAGAL-MEUSANGUEFERVEPORVC.mp3"},
+{"id":21,"artist":"Golden Oldies","title":"Take Me Back Good Old Days","genero":"POP","src":"GoldenOldies-TakeMeBackGoodOldDays.mp3"},
+{"id":22,"artist":"OLIVIANEWTON","title":"YOU RE THE ONE THAT I WAN JOHN TRAVOLTA","genero":"POP","src":"OLIVIANEWTON-YOURETHEONETHATIWANJOHNTRAVOLTA.mp3"}
 ]
